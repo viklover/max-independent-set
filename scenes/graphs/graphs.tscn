@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://p4lrcg0cb0n0"]
+
+[node name="Graphs" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -163.0
+offset_top = -16.0
+offset_right = 159.0
+offset_bottom = 12.0
+text = "ОХРЕНЕТЬ, Я РАБОТАЮ В БРАУЗЕРЕ !!!"
+horizontal_alignment = 1
