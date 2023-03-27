@@ -28,7 +28,6 @@ func set_hovered_point(point: Point):
 	hovered_point = point
 
 func create_point(position, parent_point: Point = null):
-	print('create point: ', position)
 	
 	var point: Point = prefab_point.instantiate()
 	point.connect("mouse_hover", Callable(self, "set_hovered_point"))
@@ -41,11 +40,9 @@ func create_point(position, parent_point: Point = null):
 	add_child(point)
 	
 	if parent_point != null:
-		parent_point.set_state('base')
 		points[parent_point].append(point)
-		print('with parent - ', parent_point)
 		
-		self.draw_line(Vector2.ZERO, Vector2(500, 500), Color.GREEN, 5.0)
+		draw_line(Vector2.ZERO, Vector2(500, 500), Color.GREEN, 5.0)
 
 
 func _on_gui_input(event: InputEventMouse):
@@ -59,7 +56,6 @@ func _on_gui_input(event: InputEventMouse):
 			else:
 				selected_point = hovered_point
 				selected_point.set_state('hovered')
-				print('set selected point: ', selected_point)
 
 	else:
 		
@@ -70,9 +66,13 @@ func _on_gui_input(event: InputEventMouse):
 			
 			selected_point = null
 
-
 func _on_find_button_pressed():
-	pass
+	
+	for point in points:
+		point.set_state('base')
+	
+	for point in Algorithm.find(points):
+		point.set_state('selected')
 
 func _on_clear_button_pressed():
 	

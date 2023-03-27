@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqmv7q8vvo8c5"]
+[gd_scene load_steps=3 format=3 uid="uid://bmymtwf1oinac"]
 
-[ext_resource type="Script" path="res://assets/panel/Panel.gd" id="1_8ukrl"]
+[ext_resource type="Script" path="res://assets/Panel.gd" id="1_v2tqq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bcrtu"]
 blend_mode = 1
@@ -46,7 +46,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -144.0
-script = ExtResource("1_8ukrl")
+script = ExtResource("1_v2tqq")
 
 [connection signal="pressed" from="FindButton" to="Panel" method="_on_find_button_pressed"]
 [connection signal="pressed" from="ClearButton" to="Panel" method="_on_clear_button_pressed"]
