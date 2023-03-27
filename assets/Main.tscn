@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqmv7q8vvo8c5"]
+
+[ext_resource type="Script" path="res://assets/panel/Panel.gd" id="1_8ukrl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bcrtu"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FindButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -118.0
+offset_top = 33.0
+offset_right = -41.0
+offset_bottom = 72.0
+grow_horizontal = 0
+text = "Find"
+
+[node name="ClearButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -118.0
+offset_top = 89.0
+offset_right = -41.0
+offset_bottom = 128.0
+grow_horizontal = 0
+text = "Clear"
+
+[node name="Panel" type="Panel" parent="." groups=["Points"]]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_bcrtu")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -144.0
+script = ExtResource("1_8ukrl")
+
+[connection signal="pressed" from="FindButton" to="Panel" method="_on_find_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="Panel" method="_on_clear_button_pressed"]
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]
