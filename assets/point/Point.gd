@@ -18,6 +18,7 @@ var sprite: Sprite2D
 
 func _ready():
 	sprite = get_node("Sprite")
+	
 
 func set_state(state: String):
 	sprite.texture = sprites[state]
@@ -36,4 +37,6 @@ func _on_gui_input(event: InputEventMouse):
 			set_state('hover')
 		else:
 			create_child.emit(self.position + event.position, self)
+			set_state('base')
+
 
