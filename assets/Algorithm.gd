@@ -5,19 +5,6 @@ class_name Algorithm
 static func get_neighbors_count(graph, node):
 	return graph[node].size()
 
-static func find_max(dict: Dictionary) -> Array:
-	
-	var keys = dict.keys()
-	
-	var max_key = keys[0]
-	
-	for key in range(1, len(keys)):
-		
-		if len(dict[keys[key]]) > len(dict[max_key]):
-			max_key = keys[key]
-	
-	return [max_key, len(dict[max_key])]
-
 static func find(graph: Dictionary):
 	var independent_set = []
 	
